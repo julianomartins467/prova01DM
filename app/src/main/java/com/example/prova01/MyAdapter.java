@@ -19,24 +19,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CustomViewHolder> 
     }
 
     class CustomViewHolder extends RecyclerView.ViewHolder {
-
-//Get a reference to the Views in our layout//
-
         public final View myView;
-
-        TextView textUser;
+        TextView txtProduto;
+        TextView txtValor;
 
         CustomViewHolder(View itemView) {
             super(itemView);
             myView = itemView;
-            textUser = myView.findViewById(R.id.user);
+            txtProduto = myView.findViewById(R.id.prod_desc);
+            txtValor = myView.findViewById(R.id.valor);
         }
     }
 
     @Override
-
-//Construct a RecyclerView.ViewHolder//
-
     public CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.row_layout, parent, false);
@@ -44,15 +39,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CustomViewHolder> 
     }
 
     @Override
-
-//Set the data//
-
     public void onBindViewHolder(CustomViewHolder holder, int position) {
-        holder.textUser.setText(dataList.get(position).getProduto());
-
+        holder.txtProduto.setText(dataList.get(position).getProduto() + dataList.get(position).getDescricao());
+        holder.txtValor.setText(dataList.get(position).getValor());
     }
-
-//Calculate the item count for the RecylerView//
 
     @Override
     public int getItemCount() {
