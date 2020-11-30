@@ -1,21 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="3dp"
+        app:cardPreventCornerOverlap="false">
 
 
-	<TableRow
-		android:layout_width="match_parent"
-		android:layout_height="match_parent" >
+        <ImageView
+            android:id="@+id/img_prod"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="@string/img" />
 
-		<TextView
-			android:id="@+id/prod_desc"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content" />
+    </androidx.cardview.widget.CardView>
 
-		<TextView
-			android:id="@+id/valor"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content" />
-	</TableRow>
-</androidx.constraintlayout.widget.ConstraintLayout>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_gravity="bottom"
+       android:layout_marginTop="2dp"
+       android:background="@android:color/white"
+       android:orientation="vertical"
+       android:paddingBottom="2dp"
+       android:paddingEnd="2dp"
+       android:paddingRight="2dp"
+       android:paddingStart="2dp"
+       android:paddingTop="2dp">
+
+       <TextView
+           android:id="@+id/prod_desc"
+           style="@style/TextAppearance.AppCompat.Subhead"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginStart="60dp"
+           android:layout_marginLeft="20dp"
+           android:layout_marginTop="2dp"
+           android:maxLines="3" />
+
+       <TextView
+           android:id="@+id/valor"
+           style="@style/TextAppearance.AppCompat.Caption"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginStart="60dp"
+           android:layout_marginLeft="20dp"
+           android:layout_marginTop="2dp"
+           android:ellipsize="end"
+           android:maxLines="1" />
+   </LinearLayout>
+
+</FrameLayout>			

@@ -35,10 +35,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Sobremesa>> call, Response<List<Sobremesa>> response) {
                 loadDataList(response.body());
-               // if (response.isSuccessful())
-               // {
-              //      List<Sobremesa> sobremesas = response.body();
-               // }
             }
 
             @Override
